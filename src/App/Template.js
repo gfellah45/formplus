@@ -11,7 +11,7 @@ import { paginate } from "../utility/paginate";
 const Template = () => {
   const dispatch = useDispatch();
   const {
-    templates: { list, filterd },
+    templates: { filterd },
   } = useSelector((state) => state);
 
   const [page, setPage] = useState(1);
