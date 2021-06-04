@@ -1,21 +1,18 @@
-4;
-5;
-6;
-7;
-8;
-9;
-10;
-11;
-12;
-13;
 import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
-/**
- * Test What user would see
- */
-test("renders the form correctly", () => {
-  const { getByText, getByLabelText } = render(<App />);
-  const input = getByLabelText(/search:/i);
-  expect(input).toHaveAttribute("type", "text");
+import { render, fireEvent } from "@testing-library/react";
+import Search from "../components/Search";
+import "@testing-library/jest-dom/extend-expect";
+
+describe("Input value", () => {
+  it("updates on change", () => {
+    const setSearch = jest.fn((value) => {});
+
+    const { queryByPlaceholderText } = render(<Search setSearch={setSearch} />);
+
+    const searchInput = queryByPlaceholderText("Search Templates");
+
+    fireEvent.change(searchInput, { target: { value: "test" } });
+
+    expect(searchInput.value).toBe("test");
+  });
 });

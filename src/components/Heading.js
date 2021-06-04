@@ -1,19 +1,14 @@
 import React from "react";
 import Selects from "./Selects";
 import { getCategories, getByOrder, getDate } from "../redux/template";
+import Search from "./Search";
 
 const Heading = ({ setSearch }) => {
   return (
     <header className="flex flex-col justify-between mt-10 lg:flex-row">
       {/* search button */}
       <div className="box-border relative w-full px-2 py-1 border border-gray-200 rounded lg:w-3/12 ">
-        <input
-          type="text"
-          name="search"
-          placeholder="Search Templates"
-          className="text-sm placeholder-gray-500 outline-none focus:outline-none"
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <Search setSearch={setSearch} />
         <img
           className="absolute cursor-pointer right-2 top-1"
           src="/assets/Group 19253.svg"
