@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+label {
+  top: 0%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: rgba(37, 99, 235, 1);
+}
+.empty select:not(:focus) + label {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+select:not(:focus) + label {
+  color: rgba(70, 70, 70, 1);
+}
+select {
+  border-width: 1px;
+}
+select:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 1);
+}
